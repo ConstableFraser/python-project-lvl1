@@ -1,12 +1,7 @@
 from random import randint
-from brain_games import cli
-from brain_games.scripts.game_engine import start_game
 
 
-def main():
-    name = cli.welcome_user()
-    print("Answer \"yes\" if the number is even, otherwise answer \"no\"")
-    start_game("even", name)
+PRMPT = "Answer \"yes\" if the number is even, otherwise answer \"no\""
 
 
 def question():
@@ -21,7 +16,3 @@ def check_value(value, user_value):
     else:
         r = "no"
     return (True, r) if user_value == r else (False, r)
-
-
-if __name__ == "__main__":
-    main()
