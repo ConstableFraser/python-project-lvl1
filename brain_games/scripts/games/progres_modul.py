@@ -8,7 +8,6 @@ def question():
     start = randint(1, 100)
     step = randint(2, 6)
     num = randint(1, 10)
-    print("Question:")
     val = get_progress(start, step, num)
     return val
 
@@ -31,5 +30,5 @@ def get_progress(start, step, num):
             start += step
             s += " "
         n += 1
-    print(f"{s}")
+    print(f"Question: {s}")
     return val
