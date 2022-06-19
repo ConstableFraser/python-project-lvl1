@@ -1,8 +1,14 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.0"
+version = "1.0.0"
 description = "hexlet project N1"
 authors = ["sanswed <sanswed@gmail.com>"]
+repository = "https://github.com/ConstableFraser/python-project-lvl1"
+
+classifiers = [
+    "Topic :: Software Development"
+]
+
 packages = [
  { include = "brain_games" },
 ]
