@@ -6,7 +6,7 @@ PRMPT = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
 
 def question():
     number = randint(2, 101)
-    print(f"Question: {number}")
+    print(f"{number}")
     val = is_prime(number)
     return val
 

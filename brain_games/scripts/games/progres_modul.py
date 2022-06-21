@@ -9,11 +9,7 @@ def question():
     step = randint(2, 6)
     num = randint(1, 10)
     val = get_progress(start, step, num)
-    return val
-
-
-def check_value(value, user_value):
-    return (True, value) if value == int(user_value) else (False, value)
+    return str(val)
 
 
 def get_progress(start, step, num):
@@ -30,5 +26,5 @@ def get_progress(start, step, num):
             start += step
             s += " "
         n += 1
-    print(f"Question: {s}")
+    print(f"{s}")
     return val

@@ -19,9 +19,5 @@ def question():
     else:
         print("System error. Exit")
         quit()
-    print(f"Question: {number1} {char} {number2}")
-    return result
-
-
-def check_value(value, user_value):
-    return (True, value) if value == int(user_value) else (False, value)
+    print(f"{number1} {char} {number2}")
+    return str(result)

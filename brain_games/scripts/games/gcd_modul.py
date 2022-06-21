@@ -7,13 +7,9 @@ PRMPT = "Find the greatest common divisor of given numbers."
 def question():
     number1 = randint(1, 100)
     number2 = randint(1, 100)
-    print(f"Question: {number1} {number2}")
+    print(f"{number1} {number2}")
     val = get_gcd(number1, number2, min((number1, number2)))
-    return val
-
-
-def check_value(value, user_value):
-    return (True, value) if value == int(user_value) else (False, value)
+    return str(val)
 
 
 def get_gcd(number1, number2, mini):
