@@ -1,4 +1,4 @@
-import brain_games.scripts.game_engine
+import brain_games.game_engine
 from brain_games.scripts.games.progres_modul import question, PRMPT
 
 
