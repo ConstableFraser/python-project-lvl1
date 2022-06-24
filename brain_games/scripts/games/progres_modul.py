@@ -5,26 +5,33 @@ PRMPT = "What number is missing in the progression?"
 
 
 def question():
-    start = randint(1, 100)
-    step = randint(2, 6)
-    num = randint(1, 10)
-    val = get_progress(start, step, num)
-    return str(val)
+    initial_term = randint(1, 100)
+    common_difference = randint(2, 6)
+    secret_position = randint(1, 10)
+    sequence = get_sequence(initial_term, common_difference)
+    secret = sequence[secret_position]
+    return (to_string(sequence, secret_position), str(secret))
 
 
-def get_progress(start, step, num):
+def get_sequence(initial_term, common_difference):
+    sequence = []
     n = 1
-    s = ""
-    val = 0
+    sequence.append(initial_term)
     while n <= 10:
-        if n == num:
-            s += ".. "
-            val = start
-            start += step
-        else:
-            s += str(start)
-            start += step
-            s += " "
+        initial_term += common_difference
+        sequence.append(initial_term)
         n += 1
-    print(f"{s}")
-    return val
+    return sequence
+
+
+def to_string(sequence, secret_position):
+    string = ""
+    n = 0
+    while n <= 10:
+        if n == secret_position:
+            string += ".. "
+        else:
+            string += str(sequence[n])
+            string += " "
+        n += 1
+    return string

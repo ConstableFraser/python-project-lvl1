@@ -6,23 +6,16 @@ PRMPT = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
 
 def question():
     number = randint(2, 101)
-    print(f"{number}")
-    val = is_prime(number)
-    return val
-
-
-def check_value(value, user_value):
-    return (True, value) if value == user_value else (False, value)
+    prime = is_prime(number)
+    return (f"{number}", prime)
 
 
 def is_prime(number):
     n = 2
-    val = "yes"
     while n < number:
         if n == number:
             continue
         if (number % n) == 0:
-            val = "no"
-            return val
+            return "no"
         n += 1
-    return val
+    return "yes"

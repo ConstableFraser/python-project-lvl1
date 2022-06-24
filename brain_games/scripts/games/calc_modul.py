@@ -17,7 +17,5 @@ def question():
     elif char == '*':
         result = number1 * number2
     else:
-        print("System error. Exit")
         quit()
-    print(f"{number1} {char} {number2}")
-    return str(result)
+    return (f"{number1} {char} {number2}", str(result))

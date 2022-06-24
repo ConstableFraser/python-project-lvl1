@@ -11,13 +11,14 @@ def run_game(question, PRMPT):
     print(PRMPT)
     while ncounter < 3:
         print('Question: ', end='')
-        correct = question()
+        q = question()
+        print(q[0])
         a = prompt.string("Your answer: ")
-        if a == correct:
+        if a == q[1]:
             ncounter += 1
             print("Correct!")
         else:
-            print(f"'{a}' is wrong answer ;(. Correct answer was '{correct}'")
+            print(f"'{a}' is wrong answer ;(. Correct answer was '{q[1]}'")
             print(f"Let's try again, {name}!")
             return
     print(f"Congratulations, {name}!")
