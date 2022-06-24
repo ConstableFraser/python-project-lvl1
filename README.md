@@ -18,7 +18,7 @@ python3 -m pip install --force-reinstall --user dist/*.whl
 # Hexlet tests and linter status:
 [![Actions Status](https://github.com/ConstableFraser/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ConstableFraser/python-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/ConstableFraser/python-project-lvl1)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/3145768128dd5e3c3ec6/test_coverage)](https://codeclimate.com/github/ConstableFraser/python-project-lvl1/test_coverage)
+[![GitHub Actions](https://github.com/nteir/python-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nteir/python-project-lvl1/actions/workflows/hexlet-check.yml)
 
 
 # Aciinema records:
