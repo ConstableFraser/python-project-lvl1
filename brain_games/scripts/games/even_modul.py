@@ -1,17 +1,13 @@
 from random import randint
+from brain_games.check_correct import is_even
 
 
-PRMPT = "Answer \"yes\" if the number is even, otherwise answer \"no\""
+TEXT_ANSWER = "Answer \"yes\" if the number is even, otherwise answer \"no\""
+EVEN_MIN = 1
+EVEN_MAX = 100
 
 
-def question():
-    number = randint(1, 100)
-    even = is_even(number)
-    return (f"{number}", even)
-
-
-def is_even(number):
-    if number % 2 == 0:
-        return "yes"
-    else:
-        return "no"
+def get_question_answer():
+    number = randint(EVEN_MIN, EVEN_MAX)
+    even = "yes" if is_even(number) is True else "no"
+    return f"{number}", even

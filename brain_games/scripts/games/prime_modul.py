@@ -1,21 +1,13 @@
 from random import randint
+from brain_games.check_correct import is_prime
 
 
-PRMPT = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
+TEXT_ANSWER = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
+PRIME_MIN = 2
+PRIME_MAX = 101
 
 
-def question():
-    number = randint(2, 101)
-    prime = is_prime(number)
-    return (f"{number}", prime)
-
-
-def is_prime(number):
-    n = 2
-    while n < number:
-        if n == number:
-            continue
-        if (number % n) == 0:
-            return "no"
-        n += 1
-    return "yes"
+def get_question_answer():
+    number = randint(PRIME_MIN, PRIME_MAX)
+    prime = "yes" if is_prime(number) is True else "no"
+    return f"{number}", prime

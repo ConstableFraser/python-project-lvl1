@@ -1,37 +1,35 @@
 from random import randint
 
 
-PRMPT = "What number is missing in the progression?"
+TEXT_ANSWER = "What number is missing in the progression?"
+ROUND_COUNT = 10
+INIT_MIN = 1
+INIT_MAX = 100
+COMMON_DIFFERENCE_MIN = 2
+COMMON_DIFFERENCE_MAX = 6
+SECRET_POSITION_MIN = 1
+SECRET_POSITION_MAX = 10
 
 
-def question():
-    initial_term = randint(1, 100)
-    common_difference = randint(2, 6)
-    secret_position = randint(1, 10)
-    sequence = get_sequence(initial_term, common_difference)
+def get_question_answer():
+    initial_term = randint(INIT_MIN, INIT_MAX)
+    common_difference = randint(COMMON_DIFFERENCE_MIN, COMMON_DIFFERENCE_MAX)
+    secret_position = randint(SECRET_POSITION_MIN, SECRET_POSITION_MAX)
+    sequence = get_sequence(initial_term, common_difference, ROUND_COUNT)
     secret = sequence[secret_position]
-    return (to_string(sequence, secret_position), str(secret))
+    return to_string(sequence, secret_position), str(secret)
 
 
-def get_sequence(initial_term, common_difference):
+def get_sequence(initial_term, common_difference, size):
     sequence = []
-    n = 1
-    sequence.append(initial_term)
-    while n <= 10:
+    sequence.append(str(initial_term))
+    while len(sequence) <= size:
         initial_term += common_difference
-        sequence.append(initial_term)
-        n += 1
+        sequence.append(str(initial_term))
     return sequence
 
 
 def to_string(sequence, secret_position):
-    string = ""
-    n = 0
-    while n <= 10:
-        if n == secret_position:
-            string += ".. "
-        else:
-            string += str(sequence[n])
-            string += " "
-        n += 1
+    sequence[secret_position] = ".."
+    string = " ".join(sequence)
     return string

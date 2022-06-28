@@ -2,20 +2,24 @@ from random import randint
 from random import choice
 
 
-PRMPT = "What is the result of the expression?"
+TEXT_ANSWER = "What is the result of the expression?"
+NUMBER1_MIN = 1
+NUMBER1_MAX = 100
+NUMBER2_MIN = 1
+NUMBER2_MAX = 100
 
 
-def question():
-    operation = ("+", "-", "*")
-    number1 = randint(1, 100)
-    number2 = randint(1, 100)
-    char = choice(operation)
-    if char == '+':
+def get_question_answer():
+    tuple_operations = ("+", "-", "*")
+    number1 = randint(NUMBER1_MIN, NUMBER1_MAX)
+    number2 = randint(NUMBER2_MIN, NUMBER2_MAX)
+    math_symbol = choice(tuple_operations)
+    if math_symbol == '+':
         result = number1 + number2
-    elif char == '-':
+    elif math_symbol == '-':
         result = number1 - number2
-    elif char == '*':
+    elif math_symbol == '*':
         result = number1 * number2
     else:
         quit()
-    return (f"{number1} {char} {number2}", str(result))
+    return f"{number1} {math_symbol} {number2}", str(result)

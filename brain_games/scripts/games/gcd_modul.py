@@ -1,23 +1,24 @@
 from random import randint
 
 
-PRMPT = "Find the greatest common divisor of given numbers."
+TEXT_ANSWER = "Find the greatest common divisor of given numbers."
+NUMBER1_MIN = 1
+NUMBER1_MAX = 100
+NUMBER2_MIN = 1
+NUMBER2_MAX = 100
 
 
-def question():
-    number1 = randint(1, 100)
-    number2 = randint(1, 100)
+def get_question_answer():
+    number1 = randint(NUMBER1_MIN, NUMBER1_MAX)
+    number2 = randint(NUMBER2_MIN, NUMBER2_MAX)
     val = get_gcd(number1, number2)
-    return (f"{number1} {number2}", str(val))
+    return f"{number1} {number2}", str(val)
 
 
 def get_gcd(number1, number2):
-    mini = min(number1, number2)
-    if number1 == number2:
-        return number1
-    while mini > 1:
-        if (number1 % mini) == 0 and (number2 % mini) == 0:
-            return mini
+    while number1 != 0 and number2 != 0:
+        if number1 > number2:
+            number1 %= number2
         else:
-            mini -= 1
-    return mini
+            number2 %= number1
+    return number1 + number2
