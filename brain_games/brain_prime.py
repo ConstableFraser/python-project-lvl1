@@ -1,9 +1,9 @@
 import brain_games.game_engine
-from brain_games.scripts.games.prime_modul import get_question_answer, TEXT_ANSWER
+from brain_games.scripts.games.prime_modul import get_pair_qa, TEXT_QUEST
 
 
 def main():
-    brain_games.game_engine.run_game(get_question_answer, TEXT_ANSWER)
+    brain_games.game_engine.run_game(get_pair_qa, TEXT_QUEST)
 
 
 if __name__ == "__main__":
