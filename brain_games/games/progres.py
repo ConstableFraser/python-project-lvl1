@@ -11,7 +11,7 @@ SECRET_POSITION_MIN = 1
 SECRET_POSITION_MAX = 10
 
 
-def get_pair_qa():
+def get_round():
     initial_term = randint(INIT_MIN, INIT_MAX)
     common_difference = randint(COMMON_DIFFERENCE_MIN, COMMON_DIFFERENCE_MAX)
     secret_position = randint(SECRET_POSITION_MIN, SECRET_POSITION_MAX)
