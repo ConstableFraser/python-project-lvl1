@@ -1,5 +1,5 @@
 import brain_games.engine
-from brain_games.games.calс import get_round, RULES
+from brain_games.games.calc import get_round, RULES
 
 
 def main():
